@@ -14,9 +14,16 @@ const app = express();
 
 
 // connect to the database
-mongoose.connect('mongodb://localhost/habit_tracker', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("Connected to MongoDB successfully!"))
-    .catch(err => console.log(err));
+// mongoose.connect('mongodb://localhost/habit_tracker', { useNewUrlParser: true, useUnifiedTopology: true })
+//     .then(() => console.log("Connected to MongoDB successfully!"))
+//     .catch(err => console.log(err));
+
+mongoose.connect('mongodb://localhost/habit_tracker', {useNewUrlParser: true});
+         mongoose.connection.once('open', function(){
+         console.log('Conection has been made!');
+             }).on('error', function(error){
+          console.log('Error is: ', error);
+           });
 
 
 
