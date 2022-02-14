@@ -14,7 +14,7 @@ const app = express();
 
 
 // connect to the database
-mongoose.connect('mongodb://localhost/habit_tracker', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://aditya:aditya123@cluster0.7kvvg.mongodb.net/habit_tracker', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Connected to MongoDB successfully!"))
     .catch(err => console.log(err));
 
